@@ -2,7 +2,6 @@
 
 > 项目介绍
 ## 远程API调用
-
 在config/index.js里的proxyTable配置代理请求，就可以将本地的API请求转发到远程服务器，仅限开发的时候使用
 
 > A Vue.js project
