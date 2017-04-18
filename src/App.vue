@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <Nav></Nav>
+    <Navbar></Navbar>
     <div class='main-content'>
-      <Radio v-model='radio'>测试1</Radio>
-      <Radio v-model='radio'>测试2</Radio>
       <router-view></router-view>
     </div>
+    <Foot></Foot>
   </div>
 </template>
 
 <script>
-import Nav from './components/Nav'
+import Navbar from './components/Nav'
+import Foot from './components/Footer'
 export default {
   data () {
     return {
@@ -19,11 +19,13 @@ export default {
   },
   name: 'app',
   components: {
-    Nav
+    Navbar,
+    Foot
   }
 }
 </script>
 
+/*测试*/
 <style lang='sass'>
 #app
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -32,9 +34,40 @@ export default {
   text-align: center;
   color: #2c3e50;
 
-#test
-  color: red
+//原子类
+.bw
+  background-color: white
+.tc
+  text-align: center
+.tl
+  text-align: left
+.tr
+  text-align: right
 
-.main-content
-  margin: 40px
+.fl
+  float: left
+.fr
+  float: right
+
+@for $i from 1 through 20
+  .p-#{5*$i}
+    padding: (5 * $i) + px
+  .pl-#{5*$i}
+    padding-left: (5 * $i) + px
+  .pr-#{5*$i}
+    padding-right: (5 * $i) + px
+  .pb-#{5*$i}
+    padding-bottom: (5 * $i) + px
+  .pt-#{5*$i}
+    padding-top: (5 * $i) + px
+  .m-#{5*$i}
+    margin: (5 * $i) + px
+  .ml-#{5*$i}
+    margin-left: (5 * $i) + px
+  .mr-#{5*$i}
+    margin-right: (5 * $i) + px
+  .mb-#{5*$i}
+    margin-bottom: (5 * $i) + px
+  .mt-#{5*$i}
+    margin-top: (5 * $i) + px
 </style>
